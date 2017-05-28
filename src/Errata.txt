@@ -1,0 +1,7 @@
+Classe banca: i metodi sono stati sostituiti con dei più intuitivi getter e setter
+Classe casella: aggiunto metodo attivaEffetto
+Classe contratto: creato da zero, indispensabile per la gestione dell'affitto
+Classe creaPartita: aggiunta listaPartecipanti e metodo start per l'inizializzazione della partita
+Classe Giocatore: aggiunti metodi per la creazione e/o gestione di partita, pedine, proprietà
+Classe pedina: aggiunti degli attributi, aggiunto metodo setProprietario
+Classe tabellone: rinominata la lista delle caselle ordinate
