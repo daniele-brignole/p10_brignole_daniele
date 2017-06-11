@@ -1,0 +1,19 @@
+Classe Partita
+Costruttore 98,3% problemi nei controlli per l'ordine dei giocatori
+generaPedine 96,5% NullPointerExeption sulla creazione della Pedina
+
+Classe Contratto
+calcolaAffitto 67,9% : errore nella gestione degli if sul controllo delle zone,case,alberghi. Non controlla mai oltre il condizionale isZonaCompleta se questi risulta true, anche se houses >0 o alberghi >0. riparabile invertendo l'ordine degli if.
+
+Classe Giocatore
+addPartita 70% : errore  IndexOutOfBoundExeption nel primo ciclo for del costruttore Partita quando viene creato l'oggetto di quest'ultimo 
+
+Classe Banca
+errore nel set delle case. copertura massima
+
+Classe Pedina
+muovi() 64,4%: errore nel controllo dell'input a causa della difficoltà nel testing. Difficoltà dovuta al fatto che il codice intreccia componenti di interfaccia con componenti logici. Genera StackOverflow al momento
+
+Classe Proprietà
+attivaEffetto 90,2 % : problema causato da un nullPointer Exeption su un ArrayList
+pagaAffitto 100%: errore nel calcolo dei soldi. Mancata gestione del condizionale.
