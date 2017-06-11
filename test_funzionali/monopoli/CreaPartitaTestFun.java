@@ -4,7 +4,7 @@ import static org.junit.Assert.*;
 
 import org.junit.Before;
 import org.junit.Test;
-
+//Test funzionale per il caso d'uso della creazione della partita
 public class CreaPartitaTestFun {
 	creaPartita cp; Giocatore g; Partita p = null;
 	@Before
