@@ -18,12 +18,14 @@ public class inPrigione extends Casella{
 		posizione = p; nome = n;
 	}
 /**manda in prigione il giocatore che finisce su questa casella
+ * @return 
  * 
  */
 	@Override
-	void attivaEffetto(Giocatore g) {
+	boolean attivaEffetto(Giocatore g) {
 		// TODO Auto-generated method stub
-		g.setPrigion();
+		g.putPrigion();
+		return false;
 	}
 
 	@Override

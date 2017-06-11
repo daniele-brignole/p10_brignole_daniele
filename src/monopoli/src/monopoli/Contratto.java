@@ -62,6 +62,7 @@ public class Contratto {
 		if (associata.isIpotecata()) return  0;
 		else {
 			int a = affitto;
+			System.out.println(associata.isZonaCompleta(associata.getProprietario()));
 			if(associata.isZonaCompleta(associata.getProprietario())) return a = a*3;
 			else if(houses > 0) return a = a*10*houses;
 			else if (albergo) return a= a*100;
@@ -139,5 +140,13 @@ public class Contratto {
 	 */
 	public void setIpoteca(int ipoteca) {
 		this.ipoteca = ipoteca;
+	}
+
+	public Proprietà getAssociata() {
+		return associata;
+	}
+
+	public void setAssociata(Proprietà associata) {
+		this.associata = associata;
 	}
 }

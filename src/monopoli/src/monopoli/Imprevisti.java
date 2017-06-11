@@ -19,12 +19,14 @@ public class Imprevisti extends Casella{
 	}
 /**non avendo definito precedentemente il caso dell'imprevisto
  * il metodo da una semplice stampa a video
+ * @return 
  * 
  */
 	@Override
-	void attivaEffetto(Giocatore g) {
+	boolean attivaEffetto(Giocatore g) {
 		// TODO Auto-generated method stub
 		System.out.println("Pesca un imprevisto!");
+		return false;
 	}
 
 	/* (non-Javadoc)

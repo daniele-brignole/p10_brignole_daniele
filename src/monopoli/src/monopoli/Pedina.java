@@ -58,12 +58,12 @@ public class Pedina {
 		//if (tab.getCasella(posizione)== null) System.out.println("casella inesistente");
 		System.out.println(tab.getCasella(posizione).getNome());
 		attuale.attivaEffetto(proprietario);
-		System.out.println("Dati "+this.proprietario.getNome()+ " Proprietà: "+ proprietario.getProprietàinLista() + " soldi: " + proprietario.getSoldi());
+		//System.out.println("Dati "+this.proprietario.getNome()+ " Proprietà: "+ proprietario.getProprietàinLista() + " soldi: " + proprietario.getSoldi());
 		if(proprietario.isDouble(d1, d2)){
 			System.out.println("doppio");
 			ntiri++;
 			if (ntiri == 3){
-				proprietario.setPrigion();
+				proprietario.putPrigion();
 				ntiri = 0;
 				return;
 			}
@@ -73,6 +73,46 @@ public class Pedina {
 		
 	}
 	
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public Tabellone getTab() {
+		return tab;
+	}
+
+	public void setTab(Tabellone tab) {
+		this.tab = tab;
+	}
+
+	public Casella getAttuale() {
+		return attuale;
+	}
+
+	public void setAttuale(Casella attuale) {
+		this.attuale = attuale;
+	}
+
+	public int getNtiri() {
+		return ntiri;
+	}
+
+	public void setNtiri(int ntiri) {
+		this.ntiri = ntiri;
+	}
+
+	public Giocatore getProprietario() {
+		return proprietario;
+	}
+
+	public void setPosizione(int posizione) {
+		this.posizione = posizione;
+	}
+
 	/**
 	 * Gets the posizione.
 	 *
@@ -81,7 +121,9 @@ public class Pedina {
 	public Casella getPosizione(){
 		return attuale;
 	}
-	
+	public int getPos(){
+		return posizione;
+	}
 	/** The nome. */
 	private String nome;
 	
@@ -91,7 +133,7 @@ public class Pedina {
 	private int posizione;
 	
 	/**
-	 * The tab.
+	 * The tabellone.
 	 */
 	private Tabellone tab;
 	

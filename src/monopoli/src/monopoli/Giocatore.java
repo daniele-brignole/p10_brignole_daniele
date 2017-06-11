@@ -13,10 +13,12 @@ import java.util.Scanner;
  */
 
 public class Giocatore {
-
+	private wrapper wrap = new wrapper();
 	/** The nome. */
 	private String nome;
 	
+	/** The game over. */
+	private boolean gameOver = false;
 	/** The password. */
 	private String password;
 	
@@ -78,7 +80,7 @@ public class Giocatore {
 	 *
 	 * @return the proprietàin lista
 	 */
-	public String getProprietàinLista(){
+	public String PrintProprietàinLista(){
 		String lista = "";
 		for(int i = 0; i< myProperties.size();i++){
 			lista = lista + myProperties.get(i).getNome() + " ";
@@ -170,14 +172,14 @@ public class Giocatore {
 	/**
 	 * manda in prigione il giocatore.
 	 */
-	public void setPrigion(){
+	public void putPrigion(){
 		this.prigion = true;
 	}
 	
 	/**
 	 * libera il giocatore.
 	 */
-	public void setFree(){
+	public void putFree(){
 		this.prigion = false;
 	}
 	
@@ -206,8 +208,10 @@ public class Giocatore {
 	 * @throws IOException Signals that an I/O exception has occurred.
 	 */
 	public int makeChoice() throws IOException{
-		Scanner scan = new Scanner(System.in);
-		int choice = scan.nextInt();
+		//Scanner scan = new Scanner(System.in);
+		String risp = wrap.getS();
+		System.out.println(risp);
+		int choice = Integer.parseInt(risp);
 		//scan.close();
 		if (choice == 0 || choice == 1 || choice == 2 || choice == 3 || choice == 4 || choice == 5) return choice;
 		else return -1;
@@ -254,9 +258,7 @@ public class Giocatore {
 	 *
 	 * @return the list of properties
 	 */
-	public ArrayList<Proprietà> getListOfProperties(){
-		return this.myProperties;
-	}
+	
 	
 	/**
 	 * Gets the nome.
@@ -328,5 +330,113 @@ public class Giocatore {
 	 */
 	public void setSumofDice(int sumofDice) {
 		this.sumofDice = sumofDice;
+	}
+
+	/**
+	 * Gets the count jail.
+	 *
+	 * @return the count jail
+	 */
+	public int getCountJail() {
+		return countJail;
+	}
+
+	/**
+	 * Sets the count jail.
+	 *
+	 * @param countJail the new count jail
+	 */
+	public void setCountJail(int countJail) {
+		this.countJail = countJail;
+	}
+
+	/**
+	 * Gets the ris 1.
+	 *
+	 * @return the ris 1
+	 */
+	public int getRis1() {
+		return ris1;
+	}
+
+	/**
+	 * Sets the ris 1.
+	 *
+	 * @param ris1 the new ris 1
+	 */
+	public void setRis1(int ris1) {
+		this.ris1 = ris1;
+	}
+
+	/**
+	 * Gets the ris 2.
+	 *
+	 * @return the ris 2
+	 */
+	public int getRis2() {
+		return ris2;
+	}
+
+	/**
+	 * Sets the ris 2.
+	 *
+	 * @param ris2 the new ris 2
+	 */
+	public void setRis2(int ris2) {
+		this.ris2 = ris2;
+	}
+
+	/**
+	 * Checks if is prigion.
+	 *
+	 * @return the prigion
+	 */
+	public boolean isPrigion() {
+		return prigion;
+	}
+
+	/**
+	 * Gets the my properties.
+	 *
+	 * @return the my properties
+	 */
+	public ArrayList<Proprietà> getMyProperties() {
+		return myProperties;
+	}
+
+	/**
+	 * Sets the my properties.
+	 *
+	 * @param myProperties the new my properties
+	 */
+	public void setMyProperties(ArrayList<Proprietà> myProperties) {
+		this.myProperties = myProperties;
+	}
+	public void setWrap(wrapper wrap){
+		this.wrap = wrap;
+	}
+
+	/**
+	 * Checks if is game over.
+	 *
+	 * @return true, if is game over
+	 */
+	public boolean isGameOver() {
+		return gameOver;
+	}
+
+	/**
+	 * Sets the game over.
+	 *
+	 * @param gameOver the new game over
+	 */
+	public void setGameOver(boolean gameOver) {
+		this.gameOver = gameOver;
+	}
+	/**
+	 * Metodo per definire la bancarotta di un giocatore
+	 */
+	public void gameOver(){
+		gameOver = true;
 	}
 }

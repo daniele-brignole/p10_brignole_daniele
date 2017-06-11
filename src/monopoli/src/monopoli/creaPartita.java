@@ -76,4 +76,40 @@ public class creaPartita {
 		if (partita != null) System.out.println("gioco creato");
 		return partita;
 	}
+
+	public int getSoldiIniziali() {
+		return soldiIniziali;
+	}
+
+	public void setSoldiIniziali(int soldiIniziali) {
+		this.soldiIniziali = soldiIniziali;
+	}
+
+	public int getNumeroGiocatori() {
+		return numeroGiocatori;
+	}
+
+	public void setNumeroGiocatori(int numeroGiocatori) {
+		this.numeroGiocatori = numeroGiocatori;
+	}
+
+	public int getContrattiIniziali() {
+		return contrattiIniziali;
+	}
+
+	public void setContrattiIniziali(int contrattiIniziali) {
+		this.contrattiIniziali = contrattiIniziali;
+	}
+
+	public ArrayList<Giocatore> getPartecipanti() {
+		return partecipanti;
+	}
+
+	public void setPartecipanti(ArrayList<Giocatore> partecipanti) {
+		this.partecipanti = partecipanti;
+	}
+
+	public int getLivello() {
+		return livello;
+	}
 }

@@ -35,7 +35,7 @@ public abstract class Casella {
 	 * @param g giocatore che termina sulla casella
 	 * 
 	 */
-	abstract void attivaEffetto(Giocatore g);
+	abstract boolean attivaEffetto(Giocatore g);
 	
 	/**
 	 * Gets the nome.
@@ -43,4 +43,5 @@ public abstract class Casella {
 	 * @return the nome
 	 */
 	abstract String getNome();
+	
 }

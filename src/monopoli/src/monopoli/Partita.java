@@ -84,6 +84,62 @@ public class Partita {
 		giocatoreDiTurno = this.order.get(0);
 	}
 	
+	public int getnGiocatori() {
+		return nGiocatori;
+	}
+
+	public void setnGiocatori(int nGiocatori) {
+		this.nGiocatori = nGiocatori;
+	}
+
+	public int getCounterTurni() {
+		return counterTurni;
+	}
+
+	public void setCounterTurni(int counterTurni) {
+		this.counterTurni = counterTurni;
+	}
+
+	public ArrayList<Giocatore> getPlayers() {
+		return players;
+	}
+
+	public void setPlayers(ArrayList<Giocatore> players) {
+		this.players = players;
+	}
+
+	public ArrayList<Giocatore> getOrder() {
+		return order;
+	}
+
+	public void setOrder(ArrayList<Giocatore> order) {
+		this.order = order;
+	}
+
+	public Giocatore getGiocatoreDiTurno() {
+		return giocatoreDiTurno;
+	}
+
+	public void setGiocatoreDiTurno(Giocatore giocatoreDiTurno) {
+		this.giocatoreDiTurno = giocatoreDiTurno;
+	}
+
+	public ArrayList<Integer> getRisultati() {
+		return risultati;
+	}
+
+	public void setRisultati(ArrayList<Integer> risultati) {
+		this.risultati = risultati;
+	}
+
+	public int getG() {
+		return g;
+	}
+
+	public void setG(int g) {
+		this.g = g;
+	}
+
 	/**
 	 * passa il turno al giocatore successivo.
 	 */

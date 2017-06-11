@@ -22,9 +22,10 @@ public class Probabilità extends Casella{
  * 
  */
 	@Override
-	void attivaEffetto(Giocatore g) {
+	boolean attivaEffetto(Giocatore g) {
 		// TODO Auto-generated method stub
 		System.out.println("Pesca una probabilità!");
+		return false;
 	}
 
 	@Override

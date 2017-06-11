@@ -8,7 +8,7 @@ import java.util.Scanner;
  *
  */
 public class Proprietà extends Casella {
-	
+	private wrapper wrap = new wrapper();
 	/**
 	 * The zona.
 	 */
@@ -84,7 +84,7 @@ public class Proprietà extends Casella {
 	public void pagaAffitto(Giocatore pagante){
 		int affitto = c.calcolaAffitto();
 		int remainder = (pagante.getSoldi() - affitto);
-		//if (remainder < 0 ) pagante.gameOver(); //per motivi di implementazione il giocatore perde
+		if (remainder < 0 ) pagante.gameOver(); //per motivi di implementazione il giocatore perde
 		pagante.pay(this.proprietario, affitto);;
 	}
 	public boolean isOccupata(){
@@ -106,6 +106,7 @@ public class Proprietà extends Casella {
 		else {
 			banca.setCaseTotali(remainder);
 			numeroCase = numeroCase + ncase;
+			c.setHouses(numeroCase);
 			return true;
 		}
 	}
@@ -140,17 +141,21 @@ public class Proprietà extends Casella {
 	 * 
 	 */
 	public boolean isZonaCompleta(Giocatore g){
-		int zoneTotali; int z=0;
-		if (zona == 1 || zona == 8) zoneTotali = 2;
-		if (zona == 10) zoneTotali = 4;
-		if (zona == 11) zoneTotali = 2;
+		int zoneTotali = 0; int z=0;
+		
+		if (zona == 1 || zona == 8) zoneTotali = 2; 
+		else if (zona == 10) zoneTotali = 4;
+		else if (zona == 11) zoneTotali = 2;
 		else zoneTotali = 3;
-		ArrayList<Proprietà> myProperties = new ArrayList<Proprietà>(g.getListOfProperties());
+		ArrayList<Proprietà> myProperties = new ArrayList<Proprietà>(g.getMyProperties());
 		for (int i = 0; i < myProperties.size();i++){
 			if(myProperties.get(i).zona == this.zona) z++;
 		}
+		System.out.println(z +" "+zoneTotali);
+		
 		if (z!=zoneTotali) return false;
-		return true;
+		
+		else return true;
 	}
 	public boolean compra(Giocatore g){
 		if (g.getSoldi() < this.valore) {
@@ -159,7 +164,9 @@ public class Proprietà extends Casella {
 		}
 		g.pay(this.valore);;
 		g.addPropriety(this);
-		ipotecata = true;
+		//g.getProprietàinLista();
+		this.proprietario = g;
+		stato = true;
 		return true;
 	}
 
@@ -171,19 +178,20 @@ public class Proprietà extends Casella {
 	 * @param g giocatore che finisce sulla casella di proprietà
 	 * 
 	 */
-	void attivaEffetto(Giocatore g) {
+	boolean attivaEffetto(Giocatore g) {
 		// TODO Auto-generated method stub
 		if(!stato) {
 			System.out.println("Comprare o non comprare? s/n");
-			Scanner scan = new Scanner(System.in);
-			String risp = scan.next();
-			//scan.close();
+			
+			//wrap.setS();
+			String risp = wrap.getS();
+			System.out.println(risp);
 			if (risp.equals("s")) compra(g);
 			else if(risp.equals("n")) {
 				System.out.println("Non hai comprato la proprietà, verrà messa all'asta");
 				
 				Asta asta = new Asta(500,this,null);
-				return;
+				return false;
 			}
 			else {
 				System.out.println("Input errato");
@@ -191,11 +199,73 @@ public class Proprietà extends Casella {
 				}
 			}
 		else pagaAffitto(g);
+		return true;
 	}
 
 	@Override
 	String getNome() {
 		return this.nome;
 	}
+	public int getZona() {
+		return zona;
+	}
+	public void setZona(int zona) {
+		this.zona = zona;
+	}
+	public int getValore() {
+		return valore;
+	}
+	public void setValore(int valore) {
+		this.valore = valore;
+	}
+	public boolean isStato() {
+		return stato;
+	}
+	public void setStato(boolean stato) {
+		this.stato = stato;
+	}
+	public int getNumeroCase() {
+		return numeroCase;
+	}
+	public void setNumeroCase(int numeroCase) {
+		this.numeroCase = numeroCase;
+	}
+	public int getAlbergo() {
+		return albergo;
+	}
+	public void setAlbergo(int albergo) {
+		this.albergo = albergo;
+	}
+	public Contratto getC() {
+		return c;
+	}
+	public void setC(Contratto c) {
+		this.c = c;
+	}
+	public void setProprietario(Giocatore proprietario) {
+		this.proprietario = proprietario;
+	}
+	public void setIpotecata(boolean ipotecata) {
+		this.ipotecata = ipotecata;
+	}
+	public wrapper getWrap() {
+		return wrap;
+	}
+	public void setWrap(wrapper wrap) {
+		this.wrap = wrap;
+	}
+	
+	
 
+}
+class wrapper{
+	wrapper(){
+		
+	}
+	
+	public String getS(){
+		String s1 = "";
+		return s1;
+	}
+	private String s ;
 }

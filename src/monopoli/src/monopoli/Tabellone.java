@@ -9,7 +9,7 @@ public class Tabellone {
 	/**
 	 * The caselle.
 	 */
-	private Casella[] caselle = new Casella[12];
+	private Casella[] caselle = new Casella[13];
 	/**inizializza il tabellone impostando le 13 caselle
 	 * 
 	 */
