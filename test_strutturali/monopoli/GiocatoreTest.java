@@ -20,7 +20,7 @@ import static org.mockito.Mockito.*;
 
 @RunWith(Parameterized.class)
 public class GiocatoreTest {
-	Giocatore g,g1; ArrayList<Propriet‡> lp; Propriet‡ p;
+	Giocatore g,g1; ArrayList<Proprieta> lp; Proprieta p;
 	
 	@Parameter(0) public String risp;
 	
@@ -29,8 +29,8 @@ public class GiocatoreTest {
 		g = new Giocatore("Daniele","pennuto");
 		g1 = new Giocatore("Matteo", "marzapane");
 		g.setSoldi(1000); g1.setSoldi(1000);
-		lp = new ArrayList<Propriet‡>();
-		p = new Propriet‡(1,"Via Tulipano",1,1,1,1);
+		lp = new ArrayList<Proprieta>();
+		p = new Proprieta(1,"Via Tulipano",1,1,1,1);
 	}
 	@Parameters
 	public static Collection<String[]> data(){
@@ -98,20 +98,20 @@ public class GiocatoreTest {
 		assertNotNull(p);
 	}
 	@Test
-	public void testAddPropriet‡(){
-		//Propriet‡ p = new Propriet‡(1,"Via Tulipano",1,1,1,1);
+	public void testAddProprieta(){
+		
 		g.addPropriety(p);
 		assertEquals(1,g.getMyProperties().size());
 	}
 	@Test
-	public void testRemovePropriet‡(){
+	public void testRemoveProprieta(){
 		g.removeProperty(p);
 		assertEquals(0,g.getMyProperties().size());
 	}
 	@Test
-	public void testPrintPropriet‡InLista(){
+	public void testPrintProprietaInLista(){
 		g.addPropriety(p);
-		String s = g.PrintPropriet‡inLista();
+		String s = g.PrintProprietainLista();
 		assertNotNull(s);
 	}
 	@Test

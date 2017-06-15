@@ -6,11 +6,11 @@ import org.junit.Before;
 import org.junit.Test;
 
 public class ContrattoTest {
-	Proprietà p = null;Proprietà p2 = null; Contratto c = null; Giocatore g; Contratto g2; Banca B;
+	Proprieta p = null;Proprieta p2 = null; Contratto c = null; Giocatore g; Contratto g2; Banca B;
 	@Before
 	public void setUp() throws Exception {
-		p = new Proprietà(1,"test1",6000,1,500,1);
-		p2 = new Proprietà(1,"test2",5000,1,600,1);
+		p = new Proprieta(1,"test1",6000,1,500,1);
+		p2 = new Proprieta(1,"test2",5000,1,600,1);
 		g = new Giocatore("Daniele", "ciao");
 		g.setSoldi(80000000);
 		//p.compra(g);p2.compra(g);
