@@ -55,7 +55,7 @@ public class Giocatore {
 	/**
 	 * The my properties.
 	 */
-	private ArrayList<Proprietà> myProperties = new ArrayList<Proprietà>();
+	private ArrayList<Proprieta> myProperties = new ArrayList<Proprieta>();
 	
 	/**
 	 * The contratti.
@@ -76,11 +76,11 @@ public class Giocatore {
 	Giocatore(String nome, String psw){this.nome=nome;password=psw;}
 	
 	/**
-	 * Gets the proprietàin lista.
+	 * Gets the proprieta in lista.
 	 *
-	 * @return the proprietàin lista
+	 * @return the proprieta in lista
 	 */
-	public String PrintProprietàinLista(){
+	public String PrintProprietainLista(){
 		String lista = "";
 		for(int i = 0; i< myProperties.size();i++){
 			lista = lista + myProperties.get(i).getNome() + " ";
@@ -110,7 +110,7 @@ public class Giocatore {
 	 * Paga il giocatore g la somma di denaro soldi.
 	 *
 	 * @param g giocatore da pagare
-	 * @param soldi quantità da pagare
+	 * @param soldi quantita da pagare
 	 */
 	
 	public void pay(Giocatore g, int soldi){
@@ -121,7 +121,7 @@ public class Giocatore {
 	/**
 	 * pagamento alla banca.
 	 *
-	 * @param soldi quantità da pagare
+	 * @param soldi quantita da pagare
 	 */
 	//rimossa la banca come parametro
 	public void pay(int soldi){
@@ -158,7 +158,7 @@ public class Giocatore {
 	}
 	
 	/**
-	 * controlla se il tiro seffettuato è un doppio.
+	 * controlla se il tiro seffettuato risulta un doppio.
 	 *
 	 * @param dado1 il primo risultato del dado
 	 * @param dado2 il secondo risultato del dado
@@ -202,9 +202,9 @@ public class Giocatore {
 	}
 	
 	/**
-	 * riceve un intero da console, controlla se è un numero da 0 a 5 e lo ritorna.
+	 * riceve un intero da console, controlla se risulta un numero da 0 a 5 e lo ritorna.
 	 *
-	 * @return intero inserito da console se è 0....5, -1 altrimenti
+	 * @return intero inserito da console se choice = 0....5, -1 altrimenti
 	 * @throws IOException Signals that an I/O exception has occurred.
 	 */
 	public int makeChoice() throws IOException{
@@ -236,20 +236,20 @@ public class Giocatore {
 	}
 	
 	/**
-	 * aggiunge una proprietà alla lista di proprietà possedute dal giocatore.
+	 * aggiunge una proprieta alla lista di proprietï¿½ possedute dal giocatore.
 	 *
-	 * @param p proprietà aggiunta
+	 * @param p proprieta aggiunta
 	 */
-	public void addPropriety(Proprietà p){
+	public void addPropriety(Proprieta p){
 		myProperties.add(p);
 	}
 	
 	/**
-	 * rimuove una proprietà dalla lista di proprietà possedute dal giocatore.
+	 * rimuove una proprieta dalla lista di proprietï¿½ possedute dal giocatore.
 	 *
-	 * @param p proprietà da rimuovere
+	 * @param p proprieta da rimuovere
 	 */
-	public void removeProperty(Proprietà p){
+	public void removeProperty(Proprieta p){
 		myProperties.remove(p);
 	}
 	
@@ -400,7 +400,7 @@ public class Giocatore {
 	 *
 	 * @return the my properties
 	 */
-	public ArrayList<Proprietà> getMyProperties() {
+	public ArrayList<Proprieta> getMyProperties() {
 		return myProperties;
 	}
 
@@ -409,7 +409,7 @@ public class Giocatore {
 	 *
 	 * @param myProperties the new my properties
 	 */
-	public void setMyProperties(ArrayList<Proprietà> myProperties) {
+	public void setMyProperties(ArrayList<Proprieta> myProperties) {
 		this.myProperties = myProperties;
 	}
 	public void setWrap(wrapper wrap){
