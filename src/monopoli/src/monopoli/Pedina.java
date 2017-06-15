@@ -35,12 +35,12 @@ public class Pedina {
 	}
 	
 	/**
-	 * muove la pedina di una quantità di caselle pari alla somma di due dadi
-	 * se il tiro è un doppio si tira di nuovo
-	 * se è la terza volta che si tira il giocatore va in prigione.
+	 * muove la pedina di una quantitï¿½ di caselle pari alla somma di due dadi
+	 * se il tiro ï¿½ un doppio si tira di nuovo
+	 * se ï¿½ la terza volta che si tira il giocatore va in prigione.
 	 */
 	public void muovi(){
-		//if(scan == null) System.out.println("lo scanner è nullo");
+		//if(scan == null) System.out.println("lo scanner ï¿½ nullo");
 		int d1 = proprietario.tiradado1();
 		System.out.println(d1);
 		int d2 = proprietario.tiradado2();
@@ -58,7 +58,7 @@ public class Pedina {
 		//if (tab.getCasella(posizione)== null) System.out.println("casella inesistente");
 		System.out.println(tab.getCasella(posizione).getNome());
 		attuale.attivaEffetto(proprietario);
-		//System.out.println("Dati "+this.proprietario.getNome()+ " Proprietà: "+ proprietario.getProprietàinLista() + " soldi: " + proprietario.getSoldi());
+		//System.out.println("Dati "+this.proprietario.getNome()+ " Proprietï¿½: "+ proprietario.getProprietï¿½inLista() + " soldi: " + proprietario.getSoldi());
 		if(proprietario.isDouble(d1, d2)){
 			System.out.println("doppio");
 			ntiri++;
@@ -140,7 +140,7 @@ public class Pedina {
 	/**
 	 * The attuale.
 	 */
-	private Casella attuale = new Proprietà(0,"Via",0,-1,1,1);
+	private Casella attuale = new Proprieta(0,"Via",0,-1,1,1);
 	
 	/**
 	 * The ntiri.

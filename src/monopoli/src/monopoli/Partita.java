@@ -59,7 +59,8 @@ public class Partita {
 	
 	/**
 	 * costruisce l'oggetto partita inizializzando la lista dei giocatori, 
-	 * quindi determina l'ordine in cui essi agiranno.
+	 * quindi determina l'ordine in cui essi agiranno. Segue lo UC del determinare l'ordine 
+	 * dei giocatori
 	 *
 	 * @param nG numero di giocatori
 	 * @param players lista dei giocatori non ordinata
