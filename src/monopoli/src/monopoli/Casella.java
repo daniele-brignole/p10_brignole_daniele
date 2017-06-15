@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 /**
  * classe generica di una casella del tabellone, i suoi metodi
- * sono astratti così da venire implementati in modo diverso 
+ * sono astratti in modo da venire implementati in modo diverso 
  * in base al tipo di casella da rappresentare.
  *
  * @author Daniele Brignole
@@ -30,7 +30,7 @@ public abstract class Casella {
 	 */
 	Casella(int p, String n) {
 	}
-	/**attiva l'effetto relativo alla casella su cui è finito il giocatore
+	/**attiva l'effetto relativo alla casella su cui finisce il giocatore
 	 * 	
 	 * @param g giocatore che termina sulla casella
 	 * 

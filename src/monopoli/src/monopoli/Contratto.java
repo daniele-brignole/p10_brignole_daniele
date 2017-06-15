@@ -2,7 +2,7 @@ package monopoli;
 // TODO: Auto-generated Javadoc
 
 /**
- * classe che rappresenta il contratto di una proprietà, serve per contenere i 
+ * classe che rappresenta il contratto di una proprieta, serve per contenere i 
  * dati di ipoteca e dell'affitto.
  *
  * @author Daniele Brignole
@@ -32,16 +32,16 @@ public class Contratto {
 	/**
 	 * The associata.
 	 */
-	private Proprietà associata = null;
+	private Proprieta associata = null;
 	
 	/**
 	 * inizializza l'oggetto contratto.
 	 *
-	 * @param affitto affitto base non modificato della proprietà
+	 * @param affitto affitto base non modificato della proprieta
 	 * @param ipoteca valore di ipoteca della casa
-	 * @param associata proprietà associata a questo contratto
+	 * @param associata proprieta associata a questo contratto
 	 */
-	public Contratto(int affitto,int ipoteca, Proprietà associata) {
+	public Contratto(int affitto,int ipoteca, Proprieta associata) {
 		super();
 		this.affitto = affitto;
 		this.associata = associata;
@@ -51,12 +51,12 @@ public class Contratto {
 	}
 	
 	/**
-	 *  metodo che calcola l'affitto di questa proprietà in base a
+	 *  metodo che calcola l'affitto di questa proprietï¿½ in base a
 	 * - zona completa
 	 * - numero di case
 	 * - presenza di albergo.
 	 *
-	 * @return l'affitto effettivo della proprietà
+	 * @return l'affitto effettivo della proprietï¿½
 	 */
 	public int calcolaAffitto(){
 		if (associata.isIpotecata()) return  0;
@@ -142,11 +142,11 @@ public class Contratto {
 		this.ipoteca = ipoteca;
 	}
 
-	public Proprietà getAssociata() {
+	public Proprieta getAssociata() {
 		return associata;
 	}
 
-	public void setAssociata(Proprietà associata) {
+	public void setAssociata(Proprieta associata) {
 		this.associata = associata;
 	}
 }
